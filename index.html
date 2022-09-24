@@ -21,32 +21,43 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
-    <link href="src/style.css" rel="stylesheet" type="text/css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link href="src/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="container myapp">
+    <div class="container"> 
+      <div class="weather-app-wrapper"> 
+    <div class="myapp">
       <div class="row">
         <div class="col info">
-          <h1 class="city" id="newCity">London</h1>
           <h2 class="time">13:00</h2>
-          <h3>21, September 2022</h3>
+          <h3>21, September 2022</h3>       
+          <h1 class="city" id="newCity">London</h1>
+          
         </div>
         <div class="col">
           <img src="src/images/rain.gif" alt="rain" />
         </div>
         <div class="col">
+          <button>Your Location</button>
           <span class="temperature" id="headTemp">17°</span>
-          <span
+                  <span
             ><a href="#" id="celsius">C</a> | <a href="#" id="farenheit">F</a>
           </span>
-          <form id="search-form">
+          </br>
+          <span class="description">Cloudy</span>
+          </br>
+          <span class="humidity">Humidity: 82% </span>
+          </br>
+          <span class="wind"> Wind: 4 km/h</span>
+        
+          
+        </div>
+      </div>
+        <form id="search-form">
             <input type="text" placeholder="Change city" id="search-input" />
             <input type="submit" value="go" />
           </form>
-          <button>Your Location</button>
-        </div>
-      </div>
       <hr />
       <div class="row">
         <div class="col date">
@@ -77,11 +88,13 @@
       </div>
     </div>
     </br>
-    <span>
+    <small>
       Open-source
       <a href="https://github.com/13mk/weather-app" id="github-link">code</a> by
       Mariia
-    </span>
+    </small>
+    </div>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>

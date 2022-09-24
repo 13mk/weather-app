@@ -1,18 +1,19 @@
 body {
-  color: #222021;
-  padding-top: 55px;
-  padding-left: 20%;
-  padding-right: 20%;
+  color: #2b1d24;
+}
+.weather-app-wrapper {
+  max-width: 800px;
+  margin: 55px auto;
 }
 .myapp {
   border: solid rgba(82, 80, 80, 0.7);
-  padding: 47px 20px;
+  padding: 35px 20px;
   border-radius: 20px;
   background-color: rgba(229, 236, 197, 0.164);
 }
 .info {
   margin-left: 20px;
-  text-align: center;
+  text-align: left;
 }
 .city {
   font-size: 50px;
@@ -20,14 +21,13 @@ body {
 }
 .time {
   color: rgba(105, 100, 100, 0.651);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bolder;
   font-family: "Montserrat", sans-serif;
 }
 img {
-  width: 200px;
+  max-width: 200px;
   border-radius: 50%;
-
   box-shadow: 0px 0px 15px rgb(156, 148, 148);
 }
 .temperature {
@@ -58,8 +58,16 @@ p {
 }
 
 button {
-  margin: 20px auto;
-  margin-right: 75px;
+  font-size: small;
+  margin-left: 110px;
   border: 2px solid rgba(82, 80, 80);
-  display: block;
+}
+
+form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.description {
+  font-style: oblique;
 }
