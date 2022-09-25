@@ -130,4 +130,4 @@ function showCel(event) {
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCel);
 
-search("Beijing");
+search("Bali");
