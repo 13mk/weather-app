@@ -1,14 +1,19 @@
 //clock
-let currentTime = document.querySelector(".time");
 let currentDate = new Date();
 let hours = currentDate.getHours();
+if (hours < 10) {
+  hours = `0${minutes}`;
+}
 let minutes = currentDate.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
+let currentTime = document.querySelector(".time");
 currentTime.innerHTML = `${hours}:${minutes}`;
 //date
 let day = currentDate.getDate();
 let months = [
-  "December",
   "January",
   "February",
   "March",
@@ -20,6 +25,7 @@ let months = [
   "September",
   "October",
   "November",
+  "December",
 ];
 let month = months[currentDate.getMonth()];
 let year = currentDate.getFullYear();
@@ -65,6 +71,7 @@ function showCity(event) {
   headCity.innerHTML = cityInput.value;
   //w5 api Homework p1
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  //let apiKey = "866a208a73eeff02182218e9441647a1";
   let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
   axios.get(apiurl).then(showTemp);
 }
@@ -84,6 +91,7 @@ function showPosition(position) {
   let lon = position.coords.longitude;
   let lat = position.coords.latitude;
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  //let apiKey = "866a208a73eeff02182218e9441647a1";
   let apiurl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
   axios.get(apiurl).then(showLocation);
 }
@@ -118,5 +126,3 @@ function showCel(event) {
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCel);
-
-showCity("London");
