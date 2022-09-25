@@ -59,8 +59,6 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
-  // let time = response.data.current.dt;
-  //let timeElement = document.querySelector(".time");
 }
 
 // search city
@@ -80,7 +78,6 @@ let search = document.querySelector("#search-form");
 search.addEventListener("submit", showCity);
 
 //w5 geo-button homework
-
 function showLocation(location) {
   let currentLocation = location.data.name;
   let buttonText = document.querySelector("#buttonInfo");
