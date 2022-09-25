@@ -3,7 +3,7 @@ body {
 }
 .weather-app-wrapper {
   max-width: 800px;
-  margin: 55px auto;
+  margin: 50px auto;
 }
 .myapp {
   border: solid rgba(82, 80, 80, 0.7);
@@ -11,13 +11,18 @@ body {
   border-radius: 20px;
   background-color: rgba(229, 236, 197, 0.164);
 }
-.info {
+
+.info1 {
+  margin-left: 20px;
+}
+.info2 {
   margin-left: 20px;
   text-align: left;
 }
 .city {
   font-size: 50px;
   text-shadow: 0 0 18px rgba(53, 68, 87, 0.534);
+  text-transform: capitalize;
 }
 .time {
   color: rgba(105, 100, 100, 0.651);
@@ -29,6 +34,8 @@ img {
   max-width: 200px;
   border-radius: 50%;
   box-shadow: 0px 0px 15px rgb(156, 148, 148);
+  display: block;
+  margin: 0px auto;
 }
 .temperature {
   font-size: 80px;
@@ -68,6 +75,7 @@ form {
   text-align: center;
 }
 
-.description {
+#description {
   font-style: oblique;
+  text-transform: capitalize;
 }

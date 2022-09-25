@@ -29,35 +29,35 @@
       <div class="weather-app-wrapper"> 
     <div class="myapp">
       <div class="row">
-        <div class="col info">
-          <h2 class="time">13:00</h2>
-          <h3>21, September 2022</h3>       
+       <div class="col info1">
           <h1 class="city" id="newCity">London</h1>
-          
-        </div>
-        <div class="col">
-          <img src="src/images/rain.gif" alt="rain" />
-        </div>
-        <div class="col">
-          <button>Your Location</button>
           <span class="temperature" id="headTemp">17°</span>
                   <span
             ><a href="#" id="celsius">C</a> | <a href="#" id="farenheit">F</a>
           </span>
           </br>
-          <span class="description">Cloudy</span>
+          <span id="description">Cloudy</span>
           </br>
-          <span class="humidity">Humidity: 82% </span>
+          <span>Humidity: <span id="humidity">82</span>%</span>
           </br>
-          <span class="wind"> Wind: 4 km/h</span>
+          <span>Wind: <span id="wind"> 4 </span> km/h</span>       
+        </div>
+        <div class="col">
+          <img src="src/images/rain.gif" alt="rain" id="headIcon" />
+        </div>
         
+         <div class="col-4 info2">
+          <button><span id="buttonInfo">Your Location</span></button>
+          <h2 class="time">13:00</h2>
+          <h3>21, September 2022</h3>       
+          <form id="search-form">
+            <input type="text" placeholder="Change city" id="search-input" autocomplete="off"/>
+            <input type="submit" value="go" />
+          </form>
           
         </div>
       </div>
-        <form id="search-form">
-            <input type="text" placeholder="Change city" id="search-input" />
-            <input type="submit" value="go" />
-          </form>
+        
       <hr />
       <div class="row">
         <div class="col date">
