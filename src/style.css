@@ -31,7 +31,7 @@ body {
   text-transform: capitalize;
 }
 .time {
-  color: rgba(105, 100, 100, 0.651);
+  color: rgba(196, 36, 49, 0.644);
   font-size: 25px;
   font-weight: bolder;
   font-family: "Montserrat", sans-serif;
@@ -41,7 +41,7 @@ img {
   border-radius: 50%;
   box-shadow: 0px 0px 15px rgb(156, 148, 148);
   display: block;
-  margin: 0px auto;
+  margin: 7px auto;
 }
 .temperature {
   font-size: 80px;
