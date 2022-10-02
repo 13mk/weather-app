@@ -11,6 +11,7 @@ if (minutes < 10) {
 
 let currentTime = document.querySelector(".time");
 currentTime.innerHTML = `${hours}:${minutes}`;
+
 //date
 let day = currentDate.getDate();
 let months = [
@@ -33,6 +34,54 @@ let h3 = document.querySelector("h3");
 
 h3.innerHTML = `${day}, ${month} ${year}`;
 
+//forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col-2 weather-forecast">
+        <div class="date">${formatDay(forecastDay.dt)}</div>  
+        <span class="maxTemp">${Math.round(forecastDay.temp.max)}°</span>
+        <span class="minTemp">${Math.round(forecastDay.temp.min)}°</span>
+        <img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" />
+        </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 //head Temperature (w5 Homework p2) + wind, humidity, description elements
 function showTemp(response) {
   celsiusTemperature = response.data.main.temp;
@@ -59,6 +108,8 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 // search city

@@ -1,5 +1,11 @@
 body {
   color: #2b1d24;
+  background: linear-gradient(
+    87.4deg,
+    rgb(255, 241, 165) 1.9%,
+    rgb(200, 125, 76) 49.7%,
+    rgb(83, 54, 54) 100.5%
+  );
 }
 .weather-app-wrapper {
   max-width: 800px;
@@ -9,7 +15,7 @@ body {
   border: solid rgba(82, 80, 80, 0.7);
   padding: 35px 20px;
   border-radius: 20px;
-  background-color: rgba(229, 236, 197, 0.164);
+  background-color: rgba(229, 236, 197, 0.521);
 }
 
 .info1 {
@@ -40,17 +46,17 @@ img {
 .temperature {
   font-size: 80px;
 }
-
-.weather-forecast {
+.forecast-wrapper {
+  text-align: center;
+}
+.date {
   color: rgb(62, 63, 65);
   font-style: italic;
-  text-align: center;
   font-size: larger;
 }
 
-p {
-  font-style: normal;
-  text-align: center;
+.maxTemp {
+  font-style: bolder;
   font-size: 25px;
 }
 .weather-icon {
